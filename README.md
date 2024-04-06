@@ -10,16 +10,16 @@ export const APP_NAME = createAPI({
 endpoints/users/calls.ts
 ```
 export const getUsers = APP_NAME.endpoint({
-  res: SPLINT.defineType<Pagination<User>>(),
-  query: SPLINT.defineType<{ search?: string; pageNumber?: string; pageSize?: string }>(),
+  res: APP_NAME.defineType<Pagination<User>>(),
+  query: APP_NAME.defineType<{ search?: string; pageNumber?: string; pageSize?: string }>(),
   method: "GET",
   url: "/users",
   authorized: true,
 });
 
 export const getUser = APP_NAME.endpoint({
-  res: SPLINT.defineType<User>(),
-  query: SPLINT.defineType<never>(),
+  res: APP_NAME.defineType<User>(),
+  query: APP_NAME.defineType<never>(),
   method: "GET",
   url: "/users/:userId",
   authorized: true,
